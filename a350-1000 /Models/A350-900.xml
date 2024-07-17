@@ -1125,9 +1125,9 @@
       <z>0</z>
     </axis>
     <center>
-	    <x-m> 1.1569  </x-m> <!-- all are 0 -->
-			<y-m> 3.87058  </y-m> 
-			<z-m> 0  </z-m> 
+	    <x-m> 1.16457   </x-m> <!-- all are 0 -->
+			<y-m> 0    </y-m> 
+			<z-m> -3.6146     </z-m> 
     </center>
   </animation>
   
