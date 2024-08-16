@@ -157,8 +157,8 @@
 				<command>dialog-apply</command>
 			</binding>
 			<live>true</live>
-		</checkbox>
-	</group-->
+		</checkbox-->
+	</group>
 
 	<hrule />
 

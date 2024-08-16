@@ -53,34 +53,32 @@
 						<name>lights</name>
 						<label>Control Aircraft Lights</label>
 						<binding>
-							<command>nasal</command>
-							<script>var lights = gui.Dialog.new("sim/gui/dialogs/lights/dialog", "Aircraft/A350-family/Systems/lights-dlg.xml");
-							 lights.open();</script>
+							<command>dialog-show</command>
+							<dialog-name>lights-dlg</dialog-name>
 						</binding>
 					</item>
 					<item>
 						<name>announcements</name>
 						<label>Make Announcements</label>
 						<binding>
-							<command>nasal</command>
-							<script>var announce = gui.Dialog.new("sim/gui/dialogs/announcements/dialog", "Aircraft/A350-family/Systems/announcements-dlg.xml");
-							 announce.open();</script>
+							<command>dialog-show</command>
+							<dialog-name>Cabin Announcements</dialog-name>
 						</binding>
 					</item>
 					<item>
 						<label>Ground Services Controls</label>
 						<binding>
-							<command>nasal</command>
-							<script>var ground_services = gui.Dialog.new("sim/gui/dialogs/ground_services/dialog", "Aircraft/A350-family/Systems/ground_services-dlg.xml");
-							 ground_services.open();</script>
+							<command>dialog-show</command>
+							<dialog-name>ground_services</dialog-name>
 						</binding>
 					</item>
 					<item>
 						<label>Fuel Truck Controls</label>
 						<binding>
 							<command>nasal</command>
-							<script>var fuel_truck = gui.Dialog.new("sim/gui/dialogs/fuel_truck/dialog", "Aircraft/A350-family/Systems/fuel_truck.xml");
-							 fuel_truck.open();</script>
+							<script>
+								acconfig.fuel_truck.open();
+							</script>
 						</binding>
 					</item>
 					<item>
@@ -133,7 +131,7 @@
 		</multiplay>
 		<status>Alpha</status>
 		<sound>
-			<path>Aircraft/A350-family/Sounds/sounds.xml</path>
+			<path>Aircraft/A350-family/Sounds/A350-sounds.xml</path>
 		</sound>
 
 		<!-- Systems -->
@@ -600,6 +598,9 @@
 			<file>Aircraft/A350-family/Nasal/ground_services.nas</file>
 			<file>Aircraft/A350-family/Nasal/lighting.nas</file>
 		</A350XWB>
+		<acconfig>
+			<file>Aircraft/A350-family/Nasal/acconfig.nas</file>
+		</acconfig>
 		<itaf>
 			<file>Aircraft/A350-family/Nasal/it-autoflight.nas</file>
 		</itaf>
