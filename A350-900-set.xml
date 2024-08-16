@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PropertyList include="A350-common.xml">
 	<sim>
-		<description>Airbus A350-1000</description>
+		<description>Airbus A350-900</description>
 		<flight-model>jsb</flight-model>
 		<aero>A350-900-jsbsim</aero>
 		<variant>900</variant>
