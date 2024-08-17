@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<PropertyList  include="Aircraft/Generic/Human/Include/walker-include.xml">
+<PropertyList include="Aircraft/Generic/Human/Include/walker-include.xml">
 
 	<sim>
-		<author> Juuso Tapaninen (jormapaappa1235), Brendan O'Gara (Sbyx), Chris Leung (ACJZA), Chris Andrews (DARK-L) Joshua Davidson (it0uchpods/411)</author>
-		<chase-distance-m type="double" archive="y"> -80 </chase-distance-m>
+		<author> 
+			Juuso Tapaninen (jormapaappa1235), Brendan O'Gara (Sbyx), Chris Leung (ACJZA), Chris Andrews (DARK-L) Joshua Davidson (it0uchpods/411)
+		</author>
+		<chase-distance-m type="double" archive="y">-80</chase-distance-m>
 		<flight-recorder include="Systems/flight-recorder.xml"/>
 		<gui n="0" include="gui/it-gui.xml"/>
 		<help include="gui/help.xml"/>
@@ -167,7 +169,7 @@
 				<!-- x/y/z == right/up/back -->
 				<x-offset-m type="double">-0.5326</x-offset-m>
 				<y-offset-m type="double">3.02</y-offset-m>
-				<z-offset-m type="double">-33</z-offset-m>
+				<z-offset-m type="double">-29.56</z-offset-m>
 				<pitch-offset-deg>-8</pitch-offset-deg>
 				<default-field-of-view-deg type="double">72</default-field-of-view-deg>
 			</config>
@@ -581,7 +583,67 @@
 	</instrumentation>
 
 	<input>
-		<keyboard include="A350-keyboard.xml">
+		<keyboard n="0">
+			<key n="2">
+				<name>Ctrl-b</name>
+				<desc>Speedbrakes</desc>
+				<repeatable>true</repeatable>
+				<binding>
+					<command>property-cycle</command>
+					<property>controls/flight/speedbrake</property>
+					<value>0.0</value>
+					<value>0.5</value>
+					<value>1.0</value>
+				</binding>
+			</key>
+			<key n="66">
+				<name>B</name>
+				<desc>Toggle parking brakes</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+					 A350XWB.toggle_parkingbrakes();
+					</script>
+				</binding>
+			</key>
+			<key n="123">
+				<name>{</name>
+				<desc>Turn cutoffs off</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/engines/engine[0]/cutoff</property>
+					<value>1</value>
+				</binding>	
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/engines/engine[1]/cutoff</property>
+					<value>1</value>
+				</binding>
+			</key>
+			<key n="125">
+				<name>}</name>
+				<desc>Turn	cutoffs on</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/engines/engine[0]/cutoff</property>
+					<value>0</value>
+				</binding>	
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/engines/engine[1]/cutoff</property>
+					<value>0</value>
+				</binding>
+			</key>
+			<key n="127">
+				<name>Delete</name>
+				<desc>Toggle thrust reversers</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+					 reversethrust.togglereverser();
+					</script>
+				</binding>
+			</key>
 		</keyboard>
 	</input>
 

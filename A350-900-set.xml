@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PropertyList include="A350-common.xml">
 	<sim>
+		<aero>A350-900</aero>
 		<description>Airbus A350-900</description>
-		<flight-model>jsb</flight-model>
-		<aero>A350-900-jsbsim</aero>
-		<variant>900</variant>
 		<engine>Trent XWB</engine>
-		<model>
-			<path>Aircraft/A350-family/Models/A350-900.xml</path>
-			<autopush include="autopush-config.xml"/>
-		</model>
+		<flight-model>jsb</flight-model>
 		<flaps>
 			<setting>0.00</setting>
 			<setting>0.29</setting>
@@ -22,10 +17,14 @@
 				<start-offset-m>30</start-offset-m>
 			</runways>
 		</airport>
-
-		<startup>
-			<splash-texture>Aircraft/A350-family/Splashs/splash.png</splash-texture>
-		</startup>
+		<aircraft-data>
+			<path>/sim/model/autopush/route/show</path>
+			<path>/sim/model/autopush/route/show-wingtip</path>
+		</aircraft-data>
+		<model>
+			<path>Aircraft/A350-family/Models/A350-900.xml</path>
+			<autopush include="autopush-config.xml"/>
+		</model>
 		<previews>
 			<preview>
 				<type>exterior</type>
@@ -33,11 +32,12 @@
 				<path>Splashs/splash.png</path>
 			</preview>
 		</previews>
-		<aircraft-data>
-			<path>/sim/model/autopush/route/show</path>
-			<path>/sim/model/autopush/route/show-wingtip</path>
-		</aircraft-data>
+		<startup>
+			<splash-texture>Aircraft/A350-family/Splashs/splash.png</splash-texture>
+		</startup>
+		<variant>900</variant>
 	</sim>
+	
 	<payload>
 		<weight n="0">
 			<name>Crew</name>

@@ -80,7 +80,7 @@
 	</model>
   	
 	<animation>
-		<object-name>PFD</object-name>>
+		<object-name>PFD</object-name>
 		<type>scale</type>
 		<x-offset>1.1</x-offset>
 		<y-offset>1.1</y-offset>

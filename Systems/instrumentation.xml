@@ -104,9 +104,6 @@ file, these values will be used (they are hardcoded).
 		<number>0</number>
 	</marker-beacon>
 
-
-	
-
 	<nav-radio>
 		<name>nav</name>
 		<number>0</number>
@@ -116,7 +113,6 @@ file, these values will be used (they are hardcoded).
 		<name>nav</name>
 		<number>1</number>
 	</nav-radio>
-
 
 	<adf>
 		<name>adf</name>
