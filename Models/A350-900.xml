@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <PropertyList>
-  <path>A35K.ac</path>
+  <path>A350-900.ac</path>
 
   <offsets>
     <x-m>-32.8</x-m> <!-- -32.8-->
@@ -98,7 +98,7 @@
     <name>Instruments</name>
     <path>A350-900-flightdeck.xml</path>
      <offsets>
-        <x-m>-3.5</x-m>
+        <x-m>0</x-m>
         <z-m>0</z-m>
      </offsets>
   </model>
