@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<external_reactions>
+    <force name="tractor" frame="BODY">
+        <location unit="IN">
+            <x> -980.19 </x>
+            <y>    0.00 </y>
+            <z>  -65.00 </z>
+        </location>
+        <direction>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </direction>
+    </force>
+</external_reactions>

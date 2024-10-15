@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+
+<mass_balance>
+
+    <!--ixx unit="SLUG*FT2">    611903 </ixx>
+	<iyy unit="SLUG*FT2">   1735389 </iyy>
+	<izz unit="SLUG*FT2">   2301293 </izz-->
+    <!--
+___________________A320_________A330__________A340
+BOW_____________178000________270000________283925
+SPAN______________144___________198___________209
+LENGTH____________153___________209___________209
+ROLL MOI_________1725000______5727777_______10613448
+PITCH MOI________2550000______19040141_______13904249
+YAW MOI_________3950000______23089847_______24848934
+
+	<ixx unit="SLUG*FT2">   2262183 </ixx>
+	<iyy unit="SLUG*FT2">   3172439 </iyy>
+	<izz unit="SLUG*FT2">   3337024 </izz>
+-->
+    <ixx unit="SLUG*FT2">1725000</ixx>
+    <iyy unit="SLUG*FT2">2550000</iyy>
+    <izz unit="SLUG*FT2">3950000</izz>
+    <ixy unit="SLUG*FT2">0</ixy>
+    <ixz unit="SLUG*FT2">0</ixz>
+    <iyz unit="SLUG*FT2">0</iyz>
+    <emptywt unit="LBS">229100</emptywt>
+    <location name="CG" unit="IN">
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </location>
+
+    <pointmass name="Crew">
+        <weight unit="LBS">400</weight>
+        <location name="POINTMASS" unit="IN">
+            <x>-1165.35</x>
+            <y>0</y>
+            <z>0</z>
+        </location>
+    </pointmass>
+
+    <pointmass name="Passenger">
+        <weight unit="LBS">40000</weight>
+        <form shape="cylinder">
+            <radius unit="M"> 5.6 </radius>
+            <length unit="M"> 40 </length>
+        </form>
+        <location name="POINTMASS" unit="IN">
+            <x>-300</x>
+            <y>0</y>
+            <z>0</z>
+        </location>
+    </pointmass>
+
+    <pointmass name="Fwd Cargo">
+        <weight unit="LBS">7000</weight>
+        <form shape="cylinder">
+            <radius unit="M"> 3 </radius>
+            <length unit="M"> 18 </length>
+        </form>
+        <location name="POINTMASS" unit="IN">
+            <x>-800</x>
+            <y>0</y>
+            <z>0</z>
+        </location>
+    </pointmass>
+
+    <pointmass name="Aft Cargo">
+        <weight unit="LBS">0</weight>
+        <form shape="cylinder">
+            <radius unit="M"> 2 </radius>
+            <length unit="M"> 5 </length>
+        </form>
+        <location name="POINTMASS" unit="IN">
+            <x>638</x>
+            <y>0</y>
+            <z>0</z>
+        </location>
+    </pointmass>
+
+    <pointmass name="Rear Bulk Cargo">
+        <weight unit="LBS">0</weight>
+        <form shape="cylinder">
+            <radius unit="M"> 1.24 </radius>
+            <length unit="M"> 2 </length>
+        </form>
+        <location name="POINTMASS" unit="IN">
+            <x>874</x>
+            <y>0</y>
+            <z>0</z>
+        </location>
+    </pointmass>
+
+    <pointmass name="Engine1">
+        <weight unit="LBS">13000</weight>
+        <form shape="cylinder">
+            <radius unit="M"> 1.31 </radius>
+            <length unit="M"> 5 </length>
+        </form>
+        <location name="POINTMASS" unit="IN">
+            <x>-307</x>
+            <y>-404</y>
+            <z>54</z>
+        </location>
+    </pointmass>
+
+    <pointmass name="Engine2">
+        <weight unit="LBS">13000</weight>
+        <form shape="cylinder">
+            <radius unit="M"> 1.31 </radius>
+            <length unit="M"> 5 </length>
+        </form>
+        <location name="POINTMASS" unit="IN">
+            <x>-307</x>
+            <y>404</y>
+            <z>54</z>
+        </location>
+    </pointmass>
+</mass_balance>

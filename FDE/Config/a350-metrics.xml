@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<metrics>
+    <!-- lenght 66.61 m -->
+    <wingarea unit="M2">460</wingarea>
+    <wingspan unit="M">64.8</wingspan>
+    <wing_incidence>2</wing_incidence> <!--Guestimate (Model inaccurate)-->
+    <chord unit="M">7.38</chord>
+    <htailarea unit="M2">70.92</htailarea>
+    <htailarm unit="M">19.29</htailarm>
+    <vtailarea unit="M2">49.64</vtailarea>
+    <vtailarm unit="M">9.42</vtailarm>
+    <!--
+    <location name="AERORP" unit="IN">
+      <x> 642.122 </x>
+      <y> 0 </y>
+      <z> -25.2091 </z>
+    </location>
+    <location name="EYEPOINT" unit="IN">
+      <x> 80 </x>
+      <y> -30 </y>
+      <z> 70 </z>
+    </location>
+    -->
+    <location name="VRP" unit="IN">
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </location>
+  </metrics>

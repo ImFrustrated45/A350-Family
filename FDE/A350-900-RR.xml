@@ -1,0 +1,442 @@
+<?xml version="1.0"?>
+
+<!-- Copyright (C) 2024 Kweku Adu (Captain Jake) -->
+<fdm_config name="A350-900" version="2.0" release="BETA">
+    <fileheader>
+        <author>Kweku Adu (Captain Jake)</author>
+        <description>A350-900 with Trent WXB Engines</description>
+    </fileheader>
+
+    <metrics file="FDE/Config/a350-metrics"/>
+    <mass_balance file="FDE/Config/a350-mass-balance"/>
+    <ground_reactions file="FDE/Config/a350-ground-reactions"/>
+
+    <propulsion>
+        <engine file="trent_xwb-97">
+            <location unit="IN">
+                <x>-307</x>
+                <y>-404</y>
+                <z>54</z>
+            </location>
+            <orient unit="DEG">
+                <roll> 0.0 </roll>
+                <pitch> 2.2 </pitch>
+                <yaw> 1 </yaw>
+            </orient>
+            <feed>5</feed>
+            <thruster file="direct">
+                <location unit="IN">
+                <x>-307</x>
+                <y>-404</y>
+                <z>54</z>
+                </location>
+                <orient unit="DEG">
+                <roll> 0.0 </roll>
+                <pitch> 2.2 </pitch>
+                <yaw> 1 </yaw>
+                </orient>
+            </thruster>
+        </engine>
+
+        <engine file="trent_xwb-97">
+            <location unit="IN">
+                <x>-307</x>
+                <y>404</y>
+                <z>54</z>
+            </location>
+            <orient unit="DEG">
+                <roll> 0.0 </roll>
+                <pitch> 2.2 </pitch>
+                <yaw> -1 </yaw>
+            </orient>
+            <feed>6</feed>
+            <thruster file="direct">
+                <location unit="IN">
+                <x>-307</x>
+                <y>404</y>
+                <z>54</z>
+                </location>
+                <orient unit="DEG">
+                <roll> 0.0 </roll>
+                <pitch> 2.2 </pitch>
+                <yaw> -1 </yaw>
+                </orient>
+            </thruster>
+        </engine>
+
+        <engine file="hgt1700">
+            <location unit="IN">
+                <x> 100 </x>
+                <y> 0 </y>
+                <z> 0 </z>
+            </location>
+            <orient unit="DEG">
+                <roll> 0.0 </roll>
+                <pitch> 0 </pitch>
+                <yaw> 0 </yaw>
+            </orient>
+            <feed>0</feed>
+            <thruster file="direct">
+                <location unit="IN">
+                <x> 100 </x>
+                <y> 0 </y>
+                <z> 0 </z>
+                </location>
+                <orient unit="DEG">
+                    <roll> 0.0 </roll>
+                    <pitch> 0.0 </pitch>
+                    <yaw> 0.0 </yaw>
+                </orient>
+            </thruster>
+        </engine>
+
+        <tank type="FUEL">
+            <!-- Left Tank (Wing tip Ventilation Surge) -->
+            <location unit="IN">
+                <x> 534 </x>
+                <y> -1274 </y>
+                <z> 207 </z>
+            </location>
+            <capacity unit="LBS"> 300 </capacity>
+            <contents unit="LBS"> 0 </contents>
+            <priority>0</priority>
+            <type>JET-A1</type>
+            <temperature>50</temperature>
+        </tank>
+        
+        <tank type="FUEL">
+            <!-- Left Tank (Inner) -->
+            <location unit="IN">
+                <x> -41 </x>
+                <y> -333 </y>
+                <z> 51 </z>
+            </location>
+            <capacity unit="LBS"> 52238 </capacity>
+            <contents unit="LBS"> 30000 </contents>
+            <standpipe unit="LBS">31</standpipe>
+            <!-- minimun fuel on pipes -->
+            <priority>3</priority>
+            <type>JET-A1</type>
+            <temperature>50</temperature>
+        </tank>
+        
+        <tank type="FUEL">
+            <!-- Center Tank -->
+            <location unit="IN">
+                <x> -183.46 </x>
+                <y> 0 </y>
+                <z> -59.05 </z>
+            </location>
+            <capacity unit="LBS"> 145366 </capacity>
+            <contents unit="LBS"> 64000 </contents>
+            <standpipe unit="LBS">43</standpipe>
+            <!-- minimun fuel on pipes -->
+            <priority>1</priority>
+            <type>JET-A1</type>
+            <temperature>50</temperature>
+        </tank>
+        
+        <tank type="FUEL">
+            <!-- Right Tank (Inner) -->
+            <location unit="IN">
+                <x> -41 </x>
+                <y> 333 </y>
+                <z> 51 </z>
+            </location>
+            <capacity unit="LBS"> 52238 </capacity>
+            <contents unit="LBS"> 30000 </contents>
+            <standpipe unit="LBS">31</standpipe>
+            <!-- minimun fuel on pipes -->
+            <priority>3</priority>
+            <type>JET-A1</type>
+            <temperature>50</temperature>
+        </tank>
+        
+        <tank type="FUEL">
+            <!-- Right Tank (Wing tip Ventilation Surge) -->
+            <location unit="IN">
+                <x> 534 </x>
+                <y> 1274 </y>
+                <z> 207 </z>
+            </location>
+            <capacity unit="LBS"> 300 </capacity>
+            <contents unit="LBS"> 0 </contents>
+            <priority>0</priority>
+            <type>JET-A1</type>
+            <temperature>50</temperature>
+        </tank>
+        
+        <tank type="FUEL">
+            <!-- LEFT FUEL PIPES (Engine 1 feed from this) -->
+            <location unit="IN">
+                <x> -320 </x>
+                <y> -409 </y>
+                <z> -128 </z>
+            </location>
+            <capacity unit="LBS"> 100 </capacity>
+            <contents unit="LBS"> 100 </contents>
+            <priority>1</priority>
+            <type>JET-A1</type>
+        </tank>
+
+        <tank type="FUEL">
+            <!-- RIGHT FUEL PIPES (Engine 2 feed from this) -->
+            <location unit="IN">
+                <x> -320 </x>
+                <y> 409 </y>
+                <z> -128 </z>
+            </location>
+            <capacity unit="LBS"> 100 </capacity>
+            <contents unit="LBS"> 100 </contents>
+            <priority>1</priority>
+            <type>JET-A1</type>
+        </tank>
+    </propulsion>
+
+    <flight_control name="FCS: A350">
+        <channel name="Pitch">
+
+            <summer name="Pitch Trim Sum">
+                <input>fcs/elevator-cmd-norm</input>
+                <input>fcs/pitch-trim-cmd-norm</input>
+                <clipto>
+                    <min>-1</min>
+                    <max>1</max>
+                </clipto>
+            </summer>
+
+            <aerosurface_scale name="Elevator Control">
+                <input>fcs/pitch-trim-sum</input>
+                <gain>0.018</gain>
+                <range>
+                    <min>-30</min>
+                    <max>15</max>
+                </range>
+                <output>fcs/elevator-pos-rad</output>
+            </aerosurface_scale>
+
+            <aerosurface_scale name="Elevator position normalized">
+                <input>fcs/elevator-pos-deg</input>
+                <domain>
+                    <min>-30</min>
+                    <max>15</max>
+                </domain>
+                <range>
+                    <min>-1</min>
+                    <max>1</max>
+                </range>
+                <output>fcs/elevator-pos-norm</output>
+            </aerosurface_scale>
+        </channel>
+
+        <channel name="Roll">
+            <summer name="Roll Trim Sum">
+                <input>fcs/aileron-cmd-norm</input>
+                <input>fcs/roll-trim-cmd-norm</input>
+                <clipto>
+                    <min>-1</min>
+                    <max>1</max>
+                </clipto>
+            </summer>
+            
+            <aerosurface_scale name="Left Aileron Control">
+                <input>fcs/roll-trim-sum</input>
+                <gain>0.02</gain>
+                <range>
+                    <min>-25</min>
+                    <max>25</max>
+                </range>
+                <output>fcs/left-aileron-pos-rad</output>
+            </aerosurface_scale>
+
+            <aerosurface_scale name="Right Aileron Control">
+                <input>-fcs/roll-trim-sum</input>
+                <gain>0.02</gain>
+                <range>
+                    <min>-25</min>
+                    <max>25</max>
+                </range>
+                <output>fcs/right-aileron-pos-rad</output>
+            </aerosurface_scale>
+
+            <aerosurface_scale name="Left Aileron position normalized">
+                <input>fcs/left-aileron-pos-deg</input>
+                <domain>
+                    <min>-25</min>
+                    <max>25</max>
+                </domain>
+                <range>
+                    <min>-0.75</min>
+                    <max>1</max>
+                </range>
+                <output>fcs/left-aileron-pos-norm</output>
+            </aerosurface_scale>
+
+            <aerosurface_scale name="Right Aileron position normalized">
+                <input>fcs/right-aileron-pos-deg</input>
+                <domain>
+                    <min>-25</min>
+                    <max>25</max>
+                </domain>
+                <range>
+                    <min>-0.75</min>
+                    <max>1</max>
+                </range>
+                <output>fcs/right-aileron-pos-norm</output>
+            </aerosurface_scale>
+        </channel>
+
+        <channel name="Yaw">
+            <summer name="Rudder Command Sum">
+                <input>fcs/rudder-cmd-norm</input>
+                <input>fcs/yaw-trim-cmd-norm</input>
+                <clipto>
+                    <min> -0.35 </min>
+                    <max>  0.35 </max>
+                </clipto>
+            </summer>
+
+            <scheduled_gain name="Yaw Damper Rate">
+                <input>velocities/r-aero-rad_sec</input>
+                <table>
+                    <independentVar lookup="row">velocities/ve-kts</independentVar>
+                    <tableData>
+                        30     0.00
+                        60     2.00
+                    </tableData>
+                </table>
+            </scheduled_gain>
+
+            <scheduled_gain name="Yaw Damper Beta">
+                <input>aero/beta-rad</input>
+                <table>
+                    <independentVar lookup="row">velocities/ve-kts</independentVar>
+                    <tableData>
+                    30     0.00
+                    60     0.00
+                    </tableData>
+                </table>
+            </scheduled_gain>
+
+            <summer name="Yaw Damper Sum">
+                <input>fcs/yaw-damper-beta</input>
+                <input>fcs/yaw-damper-rate</input>
+                <clipto>
+                    <min> -0.1 </min>
+                    <max>  0.1 </max>
+                </clipto>
+            </summer>
+
+            <scheduled_gain name="Yaw Damper Final">
+                <input>fcs/yaw-damper-sum</input>
+                <table>
+                    <independentVar lookup="row">velocities/ve-kts</independentVar>
+                    <tableData>
+                    30         0.0
+                    31         1.0
+                    </tableData>
+                </table>
+            </scheduled_gain>
+
+            <summer name="Rudder Sum">
+                <input>fcs/rudder-command-sum</input>
+                <input>fcs/yaw-damper-final</input>
+                <clipto>
+                    <min> -1 </min>
+                    <max>  1 </max>
+                </clipto>
+            </summer>
+
+            <aerosurface_scale name="Rudder Control">
+                <input>fcs/rudder-sum</input>
+                <range>
+                    <min> -0.35 </min>
+                    <max>  0.35 </max>
+                </range>
+                <output>fcs/rudder-pos-rad</output>
+            </aerosurface_scale>
+
+            <aerosurface_scale name="rudder normalization">
+                <input>fcs/rudder-pos-rad</input>
+                <domain>
+                    <min> -0.35 </min>
+                    <max>  0.35 </max>
+                </domain>
+                <range>
+                    <min> -1 </min>
+                    <max>  1 </max>
+                </range>
+                <output>fcs/rudder-pos-norm</output>
+            </aerosurface_scale>
+        </channel>
+
+        <channel name="Flaps">
+            <kinematic name="Flaps Control">
+                <input>fcs/flap-cmd-norm</input>
+                <traverse>
+                    <setting>
+                        <position>0</position>
+                        <time>0</time>
+                    </setting>
+                    <setting>
+                        <position>40</position>
+                        <time>40</time>
+                    </setting>
+                </traverse>
+                <output>fcs/flap-pos-deg</output>
+            </kinematic>
+
+            <aerosurface_scale name="Flap position normalized">
+                <input>fcs/flap-pos-deg</input>
+                <domain>
+                    <min>0</min>
+                    <max>40</max>
+                </domain>
+                <range>
+                    <min>0</min>
+                    <max>1</max>
+                </range>
+                <output>fcs/flap-pos-norm</output>
+            </aerosurface_scale>
+        </channel>
+
+        <channel name="Landing Gear">
+            <kinematic name="Gear Control">
+                <input>gear/gear-cmd-norm</input>
+                <traverse>
+                    <setting>
+                        <position>0</position>
+                        <time>0</time>
+                    </setting>
+                    <setting>
+                        <position>1</position>
+                        <time>10</time>
+                    </setting>
+                </traverse>
+                <output>gear/gear-pos-norm</output>
+            </kinematic>
+        </channel>
+
+        <channel name="Speedbrake">
+            <kinematic name="Speedbrake">
+                <input>fcs/speedbrake-cmd-norm</input>
+                <traverse>
+                    <setting>
+                        <position>0</position>
+                        <time>0</time>
+                    </setting>
+                    <setting>
+                        <position>1</position>
+                        <time>2</time>
+                    </setting>
+                </traverse>
+                <output>fcs/speedbrake-pos-norm</output>
+            </kinematic>
+        </channel>
+    </flight_control>
+
+    <system file="fuel"/>
+
+    <aerodynamics file="FDE/Config/a350-aerodynamics.xml"/>
+    <external_reactions file="FDE/Config/a350-external-reactions"/>
+</fdm_config>
