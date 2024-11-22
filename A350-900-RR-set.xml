@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<PropertyList include="A350-common.xml">
+<PropertyList include="A350-main.xml">
 	<sim>
 		<aero>FDE/A350-900-RR</aero>
-		<description>Airbus A350-900</description>
+		<description>Airbus A350-900 (RR - Trent XWB)</description>
 		<engine>Trent XWB</engine>
 		<flight-model>jsb</flight-model>
 		<flaps>
@@ -23,7 +23,6 @@
 		</aircraft-data>
 		<model>
 			<path>Aircraft/A350-family/Models/A350-900.xml</path>
-			<autopush include="autopush-config.xml"/>
 		</model>
 		<previews>
 			<preview>
@@ -73,10 +72,10 @@
 
 	<limits>
 		<mass-and-balance>
-			<maximum-ramp-mass-lbs>593000</maximum-ramp-mass-lbs>
-			<maximum-takeoff-mass-lbs>591000</maximum-takeoff-mass-lbs>
-			<maximum-landing-mass-lbs>452000</maximum-landing-mass-lbs>
-			<maximum-zero-fuel-mass-lbs>423000</maximum-zero-fuel-mass-lbs>
+			<maximum-ramp-mass-lbs>625892</maximum-ramp-mass-lbs>
+			<maximum-takeoff-mass-lbs>623908</maximum-takeoff-mass-lbs>
+			<maximum-landing-mass-lbs>456357</maximum-landing-mass-lbs>
+			<maximum-zero-fuel-mass-lbs>431445</maximum-zero-fuel-mass-lbs>
 		</mass-and-balance>
 		<max-flap-extension-speed>
 			<flaps>0.29</flaps>

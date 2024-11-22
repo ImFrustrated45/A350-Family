@@ -1,197 +1,14 @@
 <?xml version="1.0"?>
 
 <!-- Copyright (C) 2024 Kweku Adu (Captain Jake) -->
-<fdm_config name="A350-900" version="2.0" release="BETA">
+<fdm_config name="A350-900-RR" version="2.0" release="BETA">
     <fileheader>
         <author>Kweku Adu (Captain Jake)</author>
         <description>A350-900 with Trent WXB Engines</description>
     </fileheader>
 
-    <metrics file="FDE/Config/a350-metrics"/>
-    <mass_balance file="FDE/Config/a350-mass-balance"/>
-    <ground_reactions file="FDE/Config/a350-ground-reactions"/>
-
-    <propulsion>
-        <engine file="trent_xwb-97">
-            <location unit="IN">
-                <x>-307</x>
-                <y>-404</y>
-                <z>54</z>
-            </location>
-            <orient unit="DEG">
-                <roll> 0.0 </roll>
-                <pitch> 2.2 </pitch>
-                <yaw> 1 </yaw>
-            </orient>
-            <feed>5</feed>
-            <thruster file="direct">
-                <location unit="IN">
-                <x>-307</x>
-                <y>-404</y>
-                <z>54</z>
-                </location>
-                <orient unit="DEG">
-                <roll> 0.0 </roll>
-                <pitch> 2.2 </pitch>
-                <yaw> 1 </yaw>
-                </orient>
-            </thruster>
-        </engine>
-
-        <engine file="trent_xwb-97">
-            <location unit="IN">
-                <x>-307</x>
-                <y>404</y>
-                <z>54</z>
-            </location>
-            <orient unit="DEG">
-                <roll> 0.0 </roll>
-                <pitch> 2.2 </pitch>
-                <yaw> -1 </yaw>
-            </orient>
-            <feed>6</feed>
-            <thruster file="direct">
-                <location unit="IN">
-                <x>-307</x>
-                <y>404</y>
-                <z>54</z>
-                </location>
-                <orient unit="DEG">
-                <roll> 0.0 </roll>
-                <pitch> 2.2 </pitch>
-                <yaw> -1 </yaw>
-                </orient>
-            </thruster>
-        </engine>
-
-        <engine file="hgt1700">
-            <location unit="IN">
-                <x> 100 </x>
-                <y> 0 </y>
-                <z> 0 </z>
-            </location>
-            <orient unit="DEG">
-                <roll> 0.0 </roll>
-                <pitch> 0 </pitch>
-                <yaw> 0 </yaw>
-            </orient>
-            <feed>0</feed>
-            <thruster file="direct">
-                <location unit="IN">
-                <x> 100 </x>
-                <y> 0 </y>
-                <z> 0 </z>
-                </location>
-                <orient unit="DEG">
-                    <roll> 0.0 </roll>
-                    <pitch> 0.0 </pitch>
-                    <yaw> 0.0 </yaw>
-                </orient>
-            </thruster>
-        </engine>
-
-        <tank type="FUEL">
-            <!-- Left Tank (Wing tip Ventilation Surge) -->
-            <location unit="IN">
-                <x> 534 </x>
-                <y> -1274 </y>
-                <z> 207 </z>
-            </location>
-            <capacity unit="LBS"> 300 </capacity>
-            <contents unit="LBS"> 0 </contents>
-            <priority>0</priority>
-            <type>JET-A1</type>
-            <temperature>50</temperature>
-        </tank>
-        
-        <tank type="FUEL">
-            <!-- Left Tank (Inner) -->
-            <location unit="IN">
-                <x> -41 </x>
-                <y> -333 </y>
-                <z> 51 </z>
-            </location>
-            <capacity unit="LBS"> 52238 </capacity>
-            <contents unit="LBS"> 30000 </contents>
-            <standpipe unit="LBS">31</standpipe>
-            <!-- minimun fuel on pipes -->
-            <priority>3</priority>
-            <type>JET-A1</type>
-            <temperature>50</temperature>
-        </tank>
-        
-        <tank type="FUEL">
-            <!-- Center Tank -->
-            <location unit="IN">
-                <x> -183.46 </x>
-                <y> 0 </y>
-                <z> -59.05 </z>
-            </location>
-            <capacity unit="LBS"> 145366 </capacity>
-            <contents unit="LBS"> 64000 </contents>
-            <standpipe unit="LBS">43</standpipe>
-            <!-- minimun fuel on pipes -->
-            <priority>1</priority>
-            <type>JET-A1</type>
-            <temperature>50</temperature>
-        </tank>
-        
-        <tank type="FUEL">
-            <!-- Right Tank (Inner) -->
-            <location unit="IN">
-                <x> -41 </x>
-                <y> 333 </y>
-                <z> 51 </z>
-            </location>
-            <capacity unit="LBS"> 52238 </capacity>
-            <contents unit="LBS"> 30000 </contents>
-            <standpipe unit="LBS">31</standpipe>
-            <!-- minimun fuel on pipes -->
-            <priority>3</priority>
-            <type>JET-A1</type>
-            <temperature>50</temperature>
-        </tank>
-        
-        <tank type="FUEL">
-            <!-- Right Tank (Wing tip Ventilation Surge) -->
-            <location unit="IN">
-                <x> 534 </x>
-                <y> 1274 </y>
-                <z> 207 </z>
-            </location>
-            <capacity unit="LBS"> 300 </capacity>
-            <contents unit="LBS"> 0 </contents>
-            <priority>0</priority>
-            <type>JET-A1</type>
-            <temperature>50</temperature>
-        </tank>
-        
-        <tank type="FUEL">
-            <!-- LEFT FUEL PIPES (Engine 1 feed from this) -->
-            <location unit="IN">
-                <x> -320 </x>
-                <y> -409 </y>
-                <z> -128 </z>
-            </location>
-            <capacity unit="LBS"> 100 </capacity>
-            <contents unit="LBS"> 100 </contents>
-            <priority>1</priority>
-            <type>JET-A1</type>
-        </tank>
-
-        <tank type="FUEL">
-            <!-- RIGHT FUEL PIPES (Engine 2 feed from this) -->
-            <location unit="IN">
-                <x> -320 </x>
-                <y> 409 </y>
-                <z> -128 </z>
-            </location>
-            <capacity unit="LBS"> 100 </capacity>
-            <contents unit="LBS"> 100 </contents>
-            <priority>1</priority>
-            <type>JET-A1</type>
-        </tank>
-    </propulsion>
+    <aerodynamics file="FDE/Config/a350-aerodynamics.xml"/>
+    <external_reactions file="FDE/Config/a350-external-reactions"/>
 
     <flight_control name="FCS: A350">
         <channel name="Pitch">
@@ -435,8 +252,206 @@
         </channel>
     </flight_control>
 
-    <system file="fuel"/>
+    <ground_reactions file="FDE/Config/a350-ground-reactions"/>
+    <mass_balance file="FDE/Config/a350-mass-balance"/>
+    <metrics file="FDE/Config/a350-metrics"/>
 
-    <aerodynamics file="FDE/Config/a350-aerodynamics.xml"/>
-    <external_reactions file="FDE/Config/a350-external-reactions"/>
+    <system file="a350-fuel"/>
+
+    <propulsion>
+        <engine file="trent_xwb-97">
+            <feed>5</feed>
+            <location unit="M">
+                <x>25.1744</x>
+                <y>-10.3684</y>
+                <z>-1.3916</z>
+            </location>
+            <orient unit="DEG">
+                <roll>0.0</roll>
+                <pitch>0.0</pitch>
+                <yaw>0.0</yaw>
+            </orient>
+            <thruster file="direct">
+                <location unit="M">
+                    <x>30.0419</x>
+                    <y>-10.3684</y>
+                    <z>-1.3916</z>
+                </location>
+                <orient unit="DEG">
+                    <roll> 0.0 </roll>
+                    <pitch>0.0</pitch>
+                    <yaw>0.0</yaw>
+                </orient>
+            </thruster>
+        </engine>
+    
+        <engine file="trent_xwb-97">
+            <feed>6</feed>
+            <location unit="M">
+                <x>25.1744</x>
+                <y>10.3658</y>
+                <z>-1.3916</z>
+            </location>
+            <orient unit="DEG">
+                <roll>0.0</roll>
+                <pitch>0.0</pitch>
+                <yaw>0.0</yaw>
+            </orient>
+            <thruster file="direct">
+                <location unit="M">
+                    <x>30.0419</x>
+                    <y>10.3658</y>
+                    <z>-1.3916</z>
+                </location>
+                <orient unit="DEG">
+                    <roll>0.0</roll>
+                    <pitch>0.0</pitch> <!-- 2.2, -1-->
+                    <yaw>0.0</yaw>
+                </orient>
+            </thruster>
+        </engine>
+    
+        <engine file="hgt1700">
+            <feed>7</feed>
+            <location unit="M">
+                <x>64.1570</x>
+                <y>0</y>
+                <z>2.7153</z>
+            </location>
+            <orient unit="DEG">
+                <roll>0.0</roll>
+                <pitch>0.0</pitch>
+                <yaw>0.0</yaw>
+            </orient>
+            <thruster file="direct">
+                <location unit="M">
+                    <x>64.1570</x>
+                    <y>0</y>
+                    <z>2.7153</z>
+                </location>
+                <orient unit="DEG">
+                    <roll>0.0</roll>
+                    <pitch>0.0</pitch>
+                    <yaw>0.0</yaw>
+                </orient>
+            </thruster>
+        </engine>
+
+        <tank type="FUEL">
+            <!-- Left Wing Tank -->
+            <location unit="M">
+                <x>35.2499</x>
+                <y>-15.5634</y>
+                <z>1.54771</z>
+            </location>
+            <capacity unit="LBS">53632</capacity>
+            <contents unit="LBS">25450</contents>
+            <priority>1</priority>
+            <type>JET-A1</type>
+            <temperature>50</temperature>
+        </tank>
+        
+        <tank type="FUEL">
+            <!-- Left Collector Tank -->
+            <location unit="M">
+                <x>32.0834</x>
+                <y>-6.9772</y>
+                <z>0.4442</z>
+            </location>
+            <capacity unit="LBS">3970</capacity>
+            <contents unit="LBS">3970</contents>
+            <standpipe unit="LBS">31</standpipe>
+            <!-- minimun fuel on pipes -->
+            <priority>1</priority>
+            <type>JET-A1</type>
+            <temperature>50</temperature>
+        </tank>
+        
+        <tank type="FUEL">
+            <!-- Center Tank -->
+            <location unit="M">
+                <x>28.0862</x>
+                <y>0</y>
+                <z>-1.2012</z>
+            </location>
+            <capacity unit="LBS">172900</capacity>
+            <contents unit="LBS">64000</contents>
+            <standpipe unit="LBS">43</standpipe>
+            <!-- minimun fuel on pipes -->
+            <priority>1</priority>
+            <type>JET-A1</type>
+            <temperature>50</temperature>
+        </tank>
+    
+        <tank type="FUEL">
+            <!-- Right Wing Tank -->
+            <location unit="M">
+                <x>35.0041</x>
+                <y>15.5597</y>
+                <z>1.5457</z>
+            </location>
+            <capacity unit="LBS">53632</capacity>
+            <contents unit="LBS">25450</contents>
+            <standpipe unit="LBS">43</standpipe>
+            <priority>1</priority>
+            <type>JET-A1</type>
+            <temperature>50</temperature>
+        </tank>
+        
+        <tank type="FUEL">
+            <!-- Right Collector Tank -->
+            <location unit="M">
+                <x>32.1546</x>
+                <y>7.0817</y>
+                <z>0.4748</z>
+            </location>
+            <capacity unit="LBS">3970</capacity>
+            <contents unit="LBS">3970</contents>
+            <standpipe unit="LBS">31</standpipe>
+            <!-- minimun fuel on pipes -->
+            <priority>1</priority>
+            <type>JET-A1</type>
+            <temperature>50</temperature>
+        </tank>
+        
+        <tank type="FUEL">
+            <!-- Left Fuel Pipes (Engine 1 feed) -->
+            <location unit="M">
+                <x>27.4574</x>
+                <y>10.3658</y>
+                <z>0.3371</z>
+            </location>
+            <capacity unit="LBS">10</capacity>
+            <contents unit="LBS">0</contents>
+            <priority>1</priority>
+            <type>JET-A1</type>
+        </tank>
+    
+        <tank type="FUEL">
+            <!-- Right Fuel Pipes (Engine 2 feed) -->
+            <location unit="M">
+                <x>27.4574</x>
+                <y>-10.3684</y>
+                <z>0.3371</z>
+            </location>
+            <capacity unit="LBS">10</capacity>
+            <contents unit="LBS">0</contents>
+            <priority>1</priority>
+            <type>JET-A1</type>
+        </tank>
+    
+        <tank type="FUEL">
+            <!-- APU Fuel Pipes (APU feed) -->
+            <location unit="M">
+                <x>62.1109</x>
+                <y>0</y>
+                <z>2.7153</z>
+            </location>
+            <capacity unit="LBS">5</capacity>
+            <contents unit="LBS">0</contents>
+            <priority>1</priority>
+            <type>JET-A1</type>
+        </tank>
+    </propulsion>
+
 </fdm_config>

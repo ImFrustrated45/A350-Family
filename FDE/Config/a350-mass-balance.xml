@@ -98,10 +98,10 @@ YAW MOI_________3950000______23089847_______24848934
             <radius unit="M"> 1.31 </radius>
             <length unit="M"> 5 </length>
         </form>
-        <location name="POINTMASS" unit="IN">
-            <x>-307</x>
-            <y>-404</y>
-            <z>54</z>
+        <location name="POINTMASS" unit="M">
+            <x>25.1744</x>
+            <y>-10.3684</y>
+            <z>-1.3916</z>
         </location>
     </pointmass>
 
@@ -111,10 +111,10 @@ YAW MOI_________3950000______23089847_______24848934
             <radius unit="M"> 1.31 </radius>
             <length unit="M"> 5 </length>
         </form>
-        <location name="POINTMASS" unit="IN">
-            <x>-307</x>
-            <y>404</y>
-            <z>54</z>
+        <location name="POINTMASS" unit="M">
+            <x>25.1744</x>
+            <y>10.3658</y>
+            <z>-1.3916</z>
         </location>
     </pointmass>
 </mass_balance>

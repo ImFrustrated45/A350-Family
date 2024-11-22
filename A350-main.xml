@@ -95,6 +95,36 @@
 		</menubar>
 		<minimum-fg-version>2020.1</minimum-fg-version>
 		<model>
+			<autopush>
+				<steer-cmd-norm	alias="/controls/flight/rudder"/>
+				<yaw alias="/gear/gear[0]/steering-norm"/>
+				<yaw-mult type="float">1.0</yaw-mult>
+				<pitch-deg type="float">0</pitch-deg>
+				<min-turn-radius-m type="float">30</min-turn-radius-m>
+				<stopping-distance-m type="float">10</stopping-distance-m>
+				<chocks	alias="/controls/gear/wheel-chocks"/>
+				<available type="int">1</available>
+				<enabled type="int"/>
+				<connected type="bool">false</connected>
+				<target-speed-km_h type="float">0.0</target-speed-km_h>
+				<K_p type="float">0.5</K_p>
+				<F_p type="float">0.15</F_p>
+				<K_i type="float">0.25</K_i>
+				<F_i type="float">0.1</F_i>
+				<K_d type="float">0.0</K_d>
+				<F_d type="float">0.0</F_d>
+				<driver>
+					<F_V type="float">8.0</F_V>
+					<K_psi type="float">0.03</K_psi>
+					<F_psi type="float">1.0</F_psi>
+					<K_psidot type="float">0.03</K_psidot>
+					<F_psidot type="float">1.0</F_psidot>
+				</driver>
+				<route>
+					<show type="bool"/>
+				</route>
+				<debug type="int">0</debug>
+			</autopush>
 			<A350XWB>
 				<!--heading-bug-pfd-deg type="double">0</heading-bug-pfd-deg>
 				<heading-bug-deg type="double">0</heading-bug-deg>
@@ -391,31 +421,28 @@
 	<consumables>
 		<fuel>
 			<tank n="0">
-				<name>Left Wing Vent</name>
+				<name>Left Wing Tank</name>
 			</tank>
 			<tank n="1">
-				<name>Left Wing Outer</name>
+				<name>Left Collector Cell</name>
 			</tank>
 			<tank n="2">
-				<name>Left Wing Inner</name>
+				<name>Center Tank</name>
 			</tank>
 			<tank n="3">
-				<name>Center</name>
+				<name>Right Wing Tank</name>
 			</tank>
 			<tank n="4">
-				<name>Right Wing Inner</name>
+				<name>Right Collector Cell</name>
 			</tank>
 			<tank n="5">
-				<name>Right Wing Outer</name>
+				<name>Engine 1 Pipe</name>
 			</tank>
 			<tank n="6">
-				<name>Right Wing Vent</name>
+				<name>Engine 2 Pipe</name>
 			</tank>
 			<tank n="7">
-				<name>Left Pipes</name>
-			</tank>
-			<tank n="8">
-				<name>Right Pipes</name>
+				<name>APU Pipe</name>
 			</tank>
 		</fuel>
 	</consumables>
@@ -472,6 +499,21 @@
 				<EXT2 type="bool">1</EXT2>
 			</ground>
 		</electric>
+		<fuel>
+			<main-pump-l type="bool">0</main-pump-l>
+			<stby-pump-l type="bool">0</stby-pump-l>
+			<ctr-pump-l type="bool">0</ctr-pump-l>
+			<ctr-pump-r type="bool">0</ctr-pump-r>
+			<main-pump-r type="bool">0</main-pump-r>
+			<stby-pump-r type="bool">0</stby-pump-r>
+			<x-feed-l type="bool">0</x-feed-l>
+			<xfeed-l-guard type="bool">0</xfeed-l-guard>
+			<x-feed-r type="bool">0</x-feed-r>
+			<xfeed-r-guard type="bool">0</xfeed-r-guard>
+			<crossfeed-a type="bool">0</crossfeed-a>
+			<crossfeed-b type="bool">0</crossfeed-b>
+			<ctr-feed type="bool">0</ctr-feed>
+		</fuel>
 	</controls>
 
 	<engines>

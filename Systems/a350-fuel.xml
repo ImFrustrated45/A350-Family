@@ -1,0 +1,264 @@
+<?xml version="1.0"?>
+
+<!-- Airbus A350-900WXB Fuel System -->
+<!-- Copyright (C) 2024 Kweku Adu (Captain Jake) -->
+
+<system name="A350: Fuel">
+
+    <channel name="Main Fuel Logic" execrate="8">
+
+        <!-- Tank Pumps -->
+        <switch name="/systems/fuel/wing-pump-left-main">
+            <default value="0"/>
+            <test value="1">
+                /controls/fuel/main-pump-l eq 1
+            </test>
+        </switch>
+
+        <switch name="/systems/fuel/wing-pump-left-stby">
+            <default value="0"/>
+            <test value="1">
+                /controls/fuel/stby-pump-l eq 1
+            </test>
+        </switch>
+
+        <switch name="/systems/fuel/center-pump-left">
+            <default value="0"/>
+            <test value="1">
+                /controls/fuel/ctr-pump-l eq 1
+            </test>
+        </switch>
+
+        <switch name="/systems/fuel/center-pump-right">
+            <default value="0"/>
+            <test value="1">
+                /controls/fuel/ctr-pump-r eq 1
+            </test>
+        </switch>
+
+        <switch name="/systems/fuel/wing-pump-right-main">
+            <default value="0"/>
+            <test value="1">
+                /controls/fuel/main-pump-r eq 1
+            </test>
+        </switch>
+
+        <switch name="/systems/fuel/wing-pump-right-stby">
+            <default value="0"/>
+            <test value="1">
+                /controls/fuel/stby-pump-r eq 1
+            </test>
+        </switch>
+        
+        <!-- Tank Feed Demand -->
+		<!-- TODO: Add gravity feed into Collector Cells -->
+        <switch name="/systems/fuel/feed-l">
+			<default value="0"/>
+			<test logic="OR" value="1">
+                /systems/fuel/wing-pump-left-main eq 1
+                /systems/fuel/wing-pump-left-stby eq 1
+			</test>
+		</switch>
+		
+		<switch name="/systems/fuel/feed-c-l">
+			<default value="0"/>
+			<test value="1">
+                /systems/fuel/center-pump-left eq 1
+			</test>
+		</switch>
+
+        <switch name="/systems/fuel/feed-c-r">
+			<default value="0"/>
+			<test value="1">
+                /systems/fuel/center-pump-right eq 1
+			</test>
+		</switch>
+		
+		<switch name="/systems/fuel/feed-r">
+			<default value="0"/>
+			<test logic="OR" value="1">
+                /systems/fuel/wing-pump-right-main eq 1
+                /systems/fuel/wing-pump-right-stby eq 1
+			</test>
+		</switch>
+
+    </channel>
+
+    <!-- 
+        0 - Wing Tank Left
+        1 - Collector Cell Left
+		2 - Tank Center
+		3 - Wing Tank Right
+        4 - Collector Cell Right
+		5 - Engine 1 Pipe
+		6 - Engine 2 Pipe
+		7 - APU Pipe
+    -->
+
+    <channel name="JSB Fuel System">
+
+        <switch name="/systems/fuel/center-feeding-l">
+            <default value="0"/>
+            <test logic="AND" value="1">
+				/systems/fuel/feed-c-l eq 1
+				propulsion/tank[2]/contents-lbs gt 10
+			</test>
+        </switch>
+
+        <switch name="/systems/fuel/center-feeding-r">
+            <default value="0"/>
+            <test logic="AND" value="1">
+                /systems/fuel/feed-c-r eq 1
+				propulsion/tank[2]/contents-lbs gt 10
+			</test>
+        </switch>
+
+        <switch name="/systems/fuel/cross-feeding">
+            <default value="0"/>
+            <test logic="AND" value="1">
+                /controls/fuel/crossfeed-a eq 1
+                /controls/fuel/crossfeed-b eq 1
+			</test>
+        </switch>
+
+        <!-- Main Tanks to Engine 1 Pipe -->
+        <!-- TODO: Add proper feed conditions for center tank -->
+        <switch name="/systems/fuel/internal/tank-c-eng-1">
+			<default value="0"/>
+			<test logic="AND" value="9">
+				/systems/fuel/center-feeding-l eq 1
+				propulsion/tank[5]/contents-lbs lt 9
+			</test>
+		</switch>
+		
+		<switch name="/systems/fuel/internal/tank-l-eng-1">
+			<default value="0"/>
+			<test logic="AND" value="9">
+				/systems/fuel/feed-l eq 1
+				/systems/fuel/center-feeding-l ne 1
+				propulsion/tank[0]/contents-lbs gt 10
+				propulsion/tank[5]/contents-lbs lt 9
+			</test>
+		</switch>
+		
+		<switch name="/systems/fuel/internal/tank-r-eng-1">
+			<default value="0"/>
+			<test logic="AND" value="9">
+				/systems/fuel/feed-r eq 1
+				/systems/fuel/cross-feeding eq 1
+				/systems/fuel/center-feeding-r ne 1
+				propulsion/tank[3]/contents-lbs gt 10
+				propulsion/tank[5]/contents-lbs lt 9
+			</test>
+		</switch>
+
+        <!-- Main Tanks to Engine 2 Pipe -->
+        <switch name="/systems/fuel/internal/tank-c-eng-2">
+			<default value="0"/>
+			<test logic="AND" value="9">
+				/systems/fuel/center-feeding-r eq 1
+				propulsion/tank[6]/contents-lbs lt 9
+			</test>
+		</switch>
+		
+		<switch name="/systems/fuel/internal/tank-l-eng-2">
+			<default value="0"/>
+			<test logic="AND" value="9">
+				/systems/fuel/feed-l eq 1
+				/systems/fuel/cross-feeding eq 1
+				/systems/fuel/center-feeding-l ne 1
+				propulsion/tank[0]/contents-lbs gt 10
+				propulsion/tank[6]/contents-lbs lt 9
+			</test>
+		</switch>
+		
+		<switch name="/systems/fuel/internal/tank-r-eng-2">
+			<default value="0"/>
+			<test logic="AND" value="9">
+				/systems/fuel/feed-r eq 1
+				/systems/fuel/center-feeding-r ne 1
+				propulsion/tank[3]/contents-lbs gt 10
+				propulsion/tank[6]/contents-lbs lt 9
+			</test>
+		</switch>
+
+        <!-- Main Tanks to APU Pipe -->
+        <switch name="/systems/fuel/internal/tank-c-apu">
+			<default value="0"/>
+			<test logic="AND" value="9">
+                <!-- /systems/apu/fuel-feed eq 1 -->
+				/systems/fuel/center-feeding-l eq 1
+				propulsion/tank[7]/contents-lbs lt 4
+			</test>
+		</switch>
+		
+		<switch name="/systems/fuel/internal/tank-l-apu">
+			<default value="0"/>
+			<test logic="AND" value="9">
+                <!-- /systems/apu/fuel-feed eq 1 -->
+				/systems/fuel/feed-l eq 1
+				/systems/fuel/center-feeding-l ne 1
+				propulsion/tank[0]/contents-lbs gt 10
+				propulsion/tank[7]/contents-lbs lt 4
+			</test>
+		</switch>
+		
+		<switch name="/systems/fuel/internal/tank-r-apu">
+			<default value="0"/>
+			<test logic="AND" value="9">
+                <!-- /systems/apu/fuel-feed eq 1 -->
+				/systems/fuel/feed-r eq 1
+				/systems/fuel/cross-feeding eq 1
+				/systems/fuel/center-feeding-r ne 1
+				propulsion/tank[3]/contents-lbs gt 10
+				propulsion/tank[7]/contents-lbs lt 4
+			</test>
+		</switch>
+
+        <!-- Tank Final Flow Rates -->
+		<summer name="/systems/fuel/internal/tank-l-flow-rate">
+			<input>-/systems/fuel/internal/tank-l-eng-1</input>
+			<input>-/systems/fuel/internal/tank-l-eng-2</input>
+			<input>-/systems/fuel/internal/tank-l-apu</input>
+			<output>propulsion/tank[0]/external-flow-rate-pps</output>
+		</summer>
+		
+		<summer name="/systems/fuel/internal/tank-c-flow-rate">
+			<input>-/systems/fuel/internal/tank-c-eng-1</input>
+			<input>-/systems/fuel/internal/tank-c-eng-2</input>
+			<input>-/systems/fuel/internal/tank-c-apu</input>
+			<output>propulsion/tank[2]/external-flow-rate-pps</output>
+		</summer>
+		
+		<summer name="/systems/fuel/internal/tank-r-flow-rate">
+			<input>-/systems/fuel/internal/tank-r-eng-1</input>
+			<input>-/systems/fuel/internal/tank-r-eng-2</input>
+			<input>-/systems/fuel/internal/tank-r-apu</input>
+			<output>propulsion/tank[3]/external-flow-rate-pps</output>
+		</summer>
+		
+		<!-- Pipe Final Flow Rates -->
+		<summer name="/systems/fuel/internal/eng-1-flow-rate">
+			<input>/systems/fuel/internal/tank-l-eng-1</input>
+			<input>/systems/fuel/internal/tank-r-eng-1</input>
+			<input>/systems/fuel/internal/tank-c-eng-1</input>
+			<output>propulsion/tank[5]/external-flow-rate-pps</output>
+		</summer>
+		
+		<summer name="/systems/fuel/internal/eng-2-flow-rate">
+			<input>/systems/fuel/internal/tank-r-eng-2</input>
+			<input>/systems/fuel/internal/tank-c-eng-2</input>
+			<input>/systems/fuel/internal/tank-l-eng-2</input>
+			<output>propulsion/tank[6]/external-flow-rate-pps</output>
+		</summer>
+		
+		<summer name="/systems/fuel/internal/apu-flow-rate">
+			<input>/systems/fuel/internal/tank-l-apu</input>
+			<input>/systems/fuel/internal/tank-c-apu</input>
+			<input>/systems/fuel/internal/tank-r-apu</input>
+			<output>propulsion/tank[7]/external-flow-rate-pps</output>
+		</summer>
+
+    </channel>
+
+</system>

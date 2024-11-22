@@ -1,7 +1,7 @@
-# INSTALL
+# INSTALL METHODS
 
 ## Install using ZIP Snapshot
-[Download](https://github.com/merspieler/A350-family/archive/master.zip) the zip file.  
+[Download](https://github.com/ImFrustrated45/A350-Family/archive/refs/heads/main.zip) the zip file.  
 Use your preferred archive utility to unzip the archive.
 Move the unpacked directory to your aircraft directory. This can be FGData/Aircraft, or a custom directory you've specified.
 
@@ -12,6 +12,5 @@ To update, delete the `A350-family` directory and install the latest version.
 
 ## Install using git
 Change to the aircraft directory.
-Clone the repository with `git clone https://github.com/merspieler/A350-family.git`
-
+Clone the repository with `git clone https://github.com/ImFrustrated45/A350-Family.git`
 To update just run `git pull` in the `A350-family` directory.
