@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <!-- Copyright (C) 2024 Kweku Adu (Captain Jake) -->
-<fdm_config name="A350-900-RR" version="2.0" release="BETA">
+<PropertyList name="A350-900-RR" version="2.0" release="BETA">
     <fileheader>
         <author>Kweku Adu (Captain Jake)</author>
         <description>A350-900 with Trent WXB Engines</description>
@@ -341,8 +341,9 @@
             <!-- Left Wing Tank -->
             <location unit="M">
                 <x>35.2499</x>
-                <y>-15.5634</y>
-                <z>1.54771</z>
+                <y>1.56041</y>
+                <z>-15.747</z>
+            <!--Updated^^-->
             </location>
             <capacity unit="LBS">53632</capacity>
             <contents unit="LBS">25450</contents>
@@ -352,11 +353,12 @@
         </tank>
         
         <tank type="FUEL">
-            <!-- Left Collector Tank -->
+            <!-- Left Trim Tank -->
             <location unit="M">
-                <x>32.0834</x>
-                <y>-6.9772</y>
-                <z>0.4442</z>
+                <x>62.5382</x>
+                <y>3.1902</y>
+                <z>-3.82289</z>
+            <!--Updated-->
             </location>
             <capacity unit="LBS">3970</capacity>
             <contents unit="LBS">3970</contents>
@@ -372,7 +374,8 @@
             <location unit="M">
                 <x>28.0862</x>
                 <y>0</y>
-                <z>-1.2012</z>
+                <z>0</z>
+            <!--updated-->
             </location>
             <capacity unit="LBS">172900</capacity>
             <contents unit="LBS">64000</contents>
@@ -386,9 +389,10 @@
         <tank type="FUEL">
             <!-- Right Wing Tank -->
             <location unit="M">
-                <x>35.0041</x>
-                <y>15.5597</y>
-                <z>1.5457</z>
+                <x>35.2499</x>
+                <y>1.56041</y>
+                <z>15.593</z>
+            <!--updated^-->
             </location>
             <capacity unit="LBS">53632</capacity>
             <contents unit="LBS">25450</contents>
@@ -399,11 +403,12 @@
         </tank>
         
         <tank type="FUEL">
-            <!-- Right Collector Tank -->
+            <!-- Right Trim Tank -->
             <location unit="M">
-                <x>32.1546</x>
-                <y>7.0817</y>
-                <z>0.4748</z>
+                <x>62.5382</x>
+                <y>3.1902</y>
+                <z>-3.82289</z>
+            <!--Updated^-->
             </location>
             <capacity unit="LBS">3970</capacity>
             <contents unit="LBS">3970</contents>
@@ -454,4 +459,4 @@
         </tank>
     </propulsion>
 
-</fdm_config>
+</PropertyList>
