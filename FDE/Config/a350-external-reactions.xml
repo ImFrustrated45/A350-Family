@@ -3,9 +3,9 @@
 <external_reactions>
     <force name="tractor" frame="BODY">
         <location unit="IN">
-            <x> -980.19 </x>
+            <x> 0 </x>
             <y>    0.00 </y>
-            <z>  -65.00 </z>
+            <z> 0 </z>
         </location>
         <direction>
             <x>1</x>

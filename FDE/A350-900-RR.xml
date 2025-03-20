@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <!-- Copyright (C) 2024 Kweku Adu (Captain Jake) -->
-<fdm_config name="A350-900-RR" version="2.0" release="BETA">
+<PropertyList name="A350-900-RR" version="2.0" release="BETA">
     <fileheader>
         <author>Kweku Adu (Captain Jake)</author>
         <description>A350-900 with Trent WXB Engines</description>
@@ -352,7 +352,7 @@
         </tank>
         
         <tank type="FUEL">
-            <!-- Left Collector Tank -->
+            <!-- Left Trim Tank -->
             <location unit="M">
                 <x>-0.632</x>
                 <y>-6.828</y>
@@ -399,7 +399,7 @@
         </tank>
         
         <tank type="FUEL">
-            <!-- Right Collector Tank -->
+            <!-- Right Trim Tank -->
             <location unit="M">
                 <x>-0.632</x>
                 <y>6.828</y>
@@ -454,4 +454,4 @@
         </tank>
     </propulsion>
 
-</fdm_config>
+</PropertyList>

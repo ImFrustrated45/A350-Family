@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+
+<!-- Copyright (c) 2025 Josh Looi (Im_Frustrated45), Matthew Maring (mattmaring), Tapaninen (jormapaappa1235), Brendan O'Gara (Sbyx), Chris Leung (ACJZA), Chris Andrews (DARK-L) Joshua Davidson (it0uchpods/411) -->
+
+<PropertyList include="Aircraft/Generic/Human/Include/walker-include.xml">
+	<sim>
+		<author>
+			Juuso Tapaninen (jormapaappa1235), Brendan O'Gara (Sbyx), Chris Leung (ACJZA), Chris Andrews (DARK-L) Joshua Davidson (it0uchpods/411)
+		</author>
+	
+		<checklists include="A350-checklist.xml"/>
+		<!--#not sure where checklist is#-->
+
+		<description>Airbus A350</description>
+			<long-description>LONG DESCRIPTION LOL</long-description>
+			<!--#do description later#-->
+	
+		<expected-aircraft-dir-name>A350-Family</expected-aircraft-dir-name>
+		<!--KEEP NAME AS "A350-Family"-->
+
+		<hud n="0">
+			<enable3d n="0">false</enable3d>
+			<enable3d n="1">false</enable3d>
+		</hud>
+		
+		<model>
+			<!--#ADD AUTO PUSH#-->
+			<fallback-model-index>256</fallback-model-index> <!--Finair a350-900-->
+		</model>
+
+		<previews>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splashs/splash.png</path>
+			</preview>
+		</previews>
+
+		<rating>
+			<FDM type="int">1</FDM>
+			<systems type="init">0</systems>
+			<cockpit type="int">3</cockpit>
+			<model type="init">1</model>
+		</rating>
+
+		<!--#States e.g. ready for take off, cold&dark ect#-->
+
+		<status>Alpha</status>
+
+		<tags>
+			<tag>passanger</tag>
+			<tag>airbus</tag>
+			<tag>2010s</tag>
+			<tag>2020s</tag>
+			<tag>etops</tag>
+			<tag>glass-cockpit</tag>
+			<tag>low-wing</tag>
+			<tag>ifr</tag>
+			<tag>pressurised</tag>
+			<tag>retractable-gear</tag>
+			<tag>tricycle</tag>
+			<tag>jet</tag>
+			<tag>twin-engine</tag>
+		</tags>
+
+		<urls>
+			<code-repository>https://github.com/ImFrustrated45/A350-Family</code-repository>
+		</urls>
+
+		<systems n="0">
+		<!--#Add Josh's autopilot if ok#-->
+			<wingflexer include="Systems/wingflexer-params.xml"/>
+			<!--#Need more data for wingflex i think-->
+		</systems>
+		
+		<sound>
+			<path>Aircraft/A350-family/Sounds/A350-sounds.xml</path>
+		</sound>
+
+		<instrumentation>
+			<path>Aircraft/A350-family/Systems/instrumentation.xml</path>
+		</instrumentation>
+
+		<menubar>
+			<default>
+				<menu n="100">
+					<label>Airbus A350XWB</label> <!--Thing u see on the top of the screen-->
+					<item> <!--Thing u see after u click on ^^(dropdown menu)-->
+						<label>Select livery</label>
+						<binding>
+							<command>nasal</command>
+							<script>aircraft.livery.dialog.toggle()</script>
+						</binding>
+					</item>
+				</menu>
+			</default>
+		</menubar>
+
+		<flight-recorder include="Systems/flight-recorder.xml"/>
+		<gui n="0" include="gui/it-gui.xml"/>
+		<help n="0" include="gui/help.xml"/>
+		<minimum-fg-version>2020.3.19</minimum-fg-version>
+
+	</sim>
+
+
+	<aircraft>
+		<icao>
+			<wake-turbulence-category>H</wake-turbulence-category>
+			<type>A359</type>
+			<surveillance type="string">S</surveillance>
+		</icao>
+
+		<performance>
+			<icao-category type="string">D</icao-category>
+			<minimum>
+				<takeoff-length-ft type="int">5500</takeoff-length-ft>
+				<landing-length-ft type="int">4000</landing-length-ft>
+			</minimum>
+
+			<maximum>
+				<altitude-ft type="int">43000</altitude-ft>
+				<mach type="double">0.89</mach>
+				<aispeed-knots type="int">340</aispeed-knots>
+			</maximum>
+		</performance>
+	</aircraft>
+</PropertyList>

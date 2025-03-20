@@ -425,13 +425,13 @@
 				<name>Left Wing Tank</name>
 			</tank>
 			<tank n="1">
-				<name>Left Collector Cell</name>
+				<name>Left Trim Tank</name>
 			</tank>
 			<tank n="2">
 				<name>Center Tank</name>
 			</tank>
 			<tank n="3">
-				<name>Right Wing Tank</name>
+				<name>Right Trim Tank</name>
 			</tank>
 			<tank n="4">
 				<name>Right Collector Cell</name>

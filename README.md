@@ -12,7 +12,7 @@ This A350 repository was created from the sglichrist a350 family which was origi
 Currently this A350 is still work in progress meaning a lot of bugs. You are welcome to test the current version and submit your findings as issues which we will try our best to fix.
 
 ## Credits
-Credits goes to Vezza, Octal450 (Josh), IAHM-COL, Sbyx13, legoboyvdlp, RenanMsV, godarklight, JWocky, juse1235 and others. 
+Credits go to Vezza, Octal450 (Josh), IAHM-COL, Sbyx13, legoboyvdlp, RenanMsV, godarklight, JWocky, juse1235 and others. 
 If your name is not included in this list, I offer you my sincere apologies. 
 If you think there is an error please contact us on discord at im_frustrated45 or asta16
 

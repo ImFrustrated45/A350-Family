@@ -33,8 +33,8 @@ YAW MOI_________3950000______23089847_______24848934
 
     <!--<pointmass name="Crew">
         <weight unit="LBS">400</weight>
-        <location name="POINTMASS" unit="IN">
-            <x>-1165.35</x>
+        <location name="POINTMASS" unit="M">
+            <x>0</x>
             <y>0</y>
             <z>0</z>
         </location>
@@ -46,8 +46,8 @@ YAW MOI_________3950000______23089847_______24848934
             <radius unit="M"> 5.6 </radius>
             <length unit="M"> 40 </length>
         </form>
-        <location name="POINTMASS" unit="IN">
-            <x>-300</x>
+        <location name="POINTMASS" unit="M">
+            <x>23</x>
             <y>0</y>
             <z>0</z>
         </location>
@@ -59,8 +59,8 @@ YAW MOI_________3950000______23089847_______24848934
             <radius unit="M"> 3 </radius>
             <length unit="M"> 18 </length>
         </form>
-        <location name="POINTMASS" unit="IN">
-            <x>-800</x>
+        <location name="POINTMASS" unit="M">
+            <x>14</x>
             <y>0</y>
             <z>0</z>
         </location>
@@ -72,8 +72,8 @@ YAW MOI_________3950000______23089847_______24848934
             <radius unit="M"> 2 </radius>
             <length unit="M"> 5 </length>
         </form>
-        <location name="POINTMASS" unit="IN">
-            <x>638</x>
+        <location name="POINTMASS" unit="M">
+            <x>40</x>
             <y>0</y>
             <z>0</z>
         </location>
@@ -85,8 +85,8 @@ YAW MOI_________3950000______23089847_______24848934
             <radius unit="M"> 1.24 </radius>
             <length unit="M"> 2 </length>
         </form>
-        <location name="POINTMASS" unit="IN">
-            <x>874</x>
+        <location name="POINTMASS" unit="M">
+            <x>48</x>
             <y>0</y>
             <z>0</z>
         </location>
