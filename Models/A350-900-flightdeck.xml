@@ -186,7 +186,7 @@
 		<name>EICAS</name>
 		<path>Aircraft/A350-family/Models/flightdeck/A350-900-EICAS.xml</path>
 		<offsets>
-			<x-m>2.433</x-m>
+			<x-m>-30.247</x-m>
 			<z-m>1.8538</z-m>
 			<y-m>-0.8107</y-m>
     			<pitch-deg>-13.5</pitch-deg>
@@ -199,7 +199,7 @@
 		<name>EICAS-left</name>
 		<path>Aircraft/A350-family/Models/flightdeck/EICAS/EICAS-left.xml</path>
 		<offsets>
-			<x-m>2.433</x-m>
+			<x-m>-30.247</x-m>
 			<z-m>1.8598</z-m>
 			<y-m>-0.8107</y-m>
     			<pitch-deg>-13.5</pitch-deg>
@@ -221,9 +221,9 @@
 		<name>EICAS</name>
 		<path>Aircraft/A350-family/Models/flightdeck/A350-900-EICAS.xml</path>
 		<offsets>
-			<x-m>2.4889</x-m>
+			<x-m>-30.247</x-m>
 			<z-m>1.6444</z-m>
-    			<pitch-deg>-47.5</pitch-deg>
+    		<pitch-deg>-47.5</pitch-deg>
 		</offsets>
 	</model>  
 

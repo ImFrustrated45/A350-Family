@@ -77,10 +77,8 @@
 					<item>
 						<label>Fuel Truck Controls</label>
 						<binding>
-							<command>nasal</command>
-							<script>
-								acconfig.fuel_truck.open();
-							</script>
+							<command>dialog-show</command>
+							<dialog-name>fuel_truck</dialog-name>
 						</binding>
 					</item>
 					<item>
@@ -93,7 +91,7 @@
 				</menu>
 			</default>
 		</menubar>
-		<minimum-fg-version>2020.1</minimum-fg-version>
+		<minimum-fg-version>2024.1.1</minimum-fg-version>
 		<model>
 			<autopush>
 				<steer-cmd-norm	alias="/controls/flight/rudder"/>
@@ -169,14 +167,17 @@
 		<!-- Systems -->
 		<systems n="0">
 			<autopilot n="0">
+				<path>Aircraft/A350-family/Systems/a350-fbw-rules.xml</path>
+			</autopilot>
+			<autopilot n="1">
 				<name>IT-AUTOFLIGHT</name>
 				<path>Aircraft/A350-family/Systems/it-autoflight.xml</path>
 			</autopilot>
-			<autopilot n="1">
+			<autopilot n="2">
 				<name>IT-AUTOTHRUST</name>
 				<path>Aircraft/A350-family/Systems/it-autothrust.xml</path>
 			</autopilot>
-			<autopilot n="2">
+			<autopilot n="3">
 				<name>Gear AGL FT</name>
 				<path>Aircraft/A350-family/Systems/gear-agl-ft.xml</path>
 			</autopilot>
@@ -197,9 +198,9 @@
 					<enabled archive="y" type="bool">false</enabled>
 				</limits>
 				<!-- x/y/z == right/up/back -->
-				<x-offset-m type="double">-0.5326</x-offset-m>
-				<y-offset-m type="double">3.02</y-offset-m>
-				<z-offset-m type="double">-29.56</z-offset-m>
+				<x-offset-m type="double">-0.5231</x-offset-m>
+				<y-offset-m type="double">2.23</y-offset-m>
+				<z-offset-m type="double">-29.5</z-offset-m>
 				<pitch-offset-deg>-8</pitch-offset-deg>
 				<default-field-of-view-deg type="double">72</default-field-of-view-deg>
 			</config>
@@ -418,8 +419,8 @@
 
 	</sim>
 
-	<consumables>
-		<fuel>
+	<consumables n="0">
+		<fuel n="0">
 			<tank n="0">
 				<name>Left Wing Tank</name>
 			</tank>
@@ -447,14 +448,39 @@
 		</fuel>
 	</consumables>
 
-	<controls>
-		<gear>
+	<controls n="0">
+		<gear n="0">
 			<brake-parking>1</brake-parking>
 		</gear>
-		<apu>
+		<apu n="0">
 			<master-switch type="bool">1</master-switch>
 			<start type="bool">1</start>
 		</apu>
+		<electrical n="0">
+			<apu-gen type="bool">0</apu-gen>
+			<bat-sel type="int">0</bat-sel>
+			<bat-1 type="bool">0</bat-1>
+			<bat-2 type="bool">0</bat-2>
+			<bat-1-emer type="bool">0</bat-1-emer>
+			<bat-2-emer type="bool">0</bat-2-emer>
+			<bus-tie type="bool">1</bus-tie>
+			<drive-1A type="bool">0</drive-1A>
+			<drive-1B type="bool">0</drive-1B>
+			<drive-2A type="bool">0</drive-2A>
+			<drive-2B type="bool">0</drive-2B>
+			<drive-1A-latch type="bool">0</drive-1A-latch>
+			<drive-1B-latch type="bool">0</drive-1B-latch>
+			<drive-2A-latch type="bool">0</drive-2A-latch>
+			<drive-2B-latch type="bool">0</drive-2B-latch>
+			<ext-1 type="bool">0</ext-1>
+			<ext-2 type="bool">0</ext-2>
+			<galley type="bool">1</galley>
+			<gen-1A type="bool">0</gen-1A>
+			<gen-1B type="bool">0</gen-1B>
+			<gen-1A type="bool">0</gen-1A>
+			<gen-2B type="bool">0</gen-2B>
+			<pax-sys type="bool">0</pax-sys>
+		</electrical>
 		<electric>
 			<contact>
 				<GEN1A type="bool">1</GEN1A>
@@ -499,7 +525,7 @@
 				<EXT2 type="bool">1</EXT2>
 			</ground>
 		</electric>
-		<fuel>
+		<fuel n="0">
 			<main-pump-l type="bool">0</main-pump-l>
 			<stby-pump-l type="bool">0</stby-pump-l>
 			<ctr-pump-l type="bool">0</ctr-pump-l>
@@ -516,7 +542,7 @@
 		</fuel>
 	</controls>
 
-	<engines>
+	<engines n="0">
 		<engine n="0">
 			<egt-actual type="double">0</egt-actual>
 			<epr-actual type="double">1</epr-actual>
@@ -612,6 +638,22 @@
 			<togaspd>160</togaspd> <!-- V2 + 10kts -->
 		</settings>
 	</it-autoflight>
+
+	<it-fbw n="0">
+		<alpha-hld type="bool">0</alpha-hld>
+		<degrade-law type="int">0</degrade-law>
+		<law type="int">0</law>
+		<degrade-yaw-law type="int">0</degrade-yaw-law>
+		<yaw-law type="int">0</yaw-law>
+		<roll-lim type="string">33</roll-lim>
+		<roll-back type="bool">0</roll-back>
+		<override type="bool">0</override>
+		<protections n="0">
+			<overspeed type="bool">0</overspeed>
+			<overspeed-roll-back type="bool">0</overspeed-roll-back>
+		</protections>
+		<spd-hld type="bool">0</spd-hld>
+	</it-fbw>
 	
 	<instrumentation>
 		<!-- mk-viii configuration, see: http://wiki.flightgear.org/index.php/GPWS -->
@@ -712,7 +754,76 @@
 		</keyboard>
 	</input>
 
+	<!-- TODO: Add after including all necessary properties
+	<systems n="0">
+		<fbw n="0">
+			<fmgc n="0">
+				<pitch-cmd type="double">0</pitch-cmd>
+				<roll-cmd type="double">0</roll-cmd>
+				<yaw-cmd type="double">0</yaw-cmd>
+			</fmgc>
+			<pitch n="0">
+				<ias-predict type="double">0</ias-predict>
+				<load-factor-pi type="double">0</load-factor-pi>
+			</pitch>
+			<sidestick n="0">
+				<active type="bool" n="0">1</active>
+				<active type="bool" n="1">1</active>
+			</sidestick>
+			<yaw n="0">
+				<max-deg-switch type="double">25</max-deg-switch>
+			</yaw>
+		</fbw>
+	</systems>
+	-->
+
 	<nasal>
+		<pts>
+			<file>Aircraft/A350-family/Nasal/property-tree-setup.nas</file>
+		</pts>
+		<libraries>
+			<!-- TODO: Create libraries.nas file -->
+		</libraries>
+		<acconfig>
+			<file>Aircraft/A350-family/Nasal/acconfig.nas</file>
+		</acconfig>
+		<systems>
+			<!-- TODO: System Submodules 
+				<file>Aircraft/A350-family/Nasal/electrical.nas</file>
+			-->
+		</systems>
+		<!-- Add after implementing fbw property tree setup
+		<fbw>
+			<file>Aircraft/A350-family/Nasal/Systems/fbw.nas</file>
+		</fbw>
+		-->
+		<itaf>
+			<file>Aircraft/A350-family/Nasal/it-autoflight.nas</file>
+		</itaf>
+		<mcdU>
+			<!-- Add MCDU Page Module-->
+		</mcdU>
+		<cockpit>
+			<!-- TODO: Add cockpit configuration file -->
+		</cockpit>
+		<!-- 
+		
+			TODO: Add the following Nasal files:
+			- PFD.nas
+			- MCDU.nas
+			- ND.nas
+			- EICAS.nas
+			- ECAM.nas
+		
+		-->
+		<instruments>
+			<!-- 
+				TODO: Add the following instruments:
+				- Transponder
+				- EFIS
+				- Radios
+			-->
+		</instruments>
 		<A350XWB>
 			<file>Aircraft/A350-family/Nasal/ECAM.nas</file>
 			<file>Aircraft/A350-family/Nasal/engines.nas</file>
@@ -723,20 +834,11 @@
 			<file>Aircraft/A350-family/Nasal/liveries.nas</file>
 			<file>Aircraft/A350-family/Models/Instruments/ND/ND.nas</file>
 			<file>Aircraft/A350-family/Nasal/ground_services.nas</file>
-			<file>Aircraft/A350-family/Nasal/lighting.nas</file>
+			<file>Aircraft/A350-family/Nasal/light-manager.nas</file>
 		</A350XWB>
-		<acconfig>
-			<file>Aircraft/A350-family/Nasal/acconfig.nas</file>
-		</acconfig>
-		<itaf>
-			<file>Aircraft/A350-family/Nasal/it-autoflight.nas</file>
-		</itaf>
 		<reversethrust>
 			<file>Aircraft/A350-family/Nasal/reversethrust.nas</file>
 		</reversethrust>
-		<!--<electrical>
-			<file>Aircraft/A350-family/Nasal/electrical.nas</file>
-		</electrical> -->
 		<electrical>
 			<file>Aircraft/A350-family/Systems/Electrical/empty_vectors.nas</file>
 			<file>Aircraft/A350-family/Systems/Electrical/supplier.nas</file>
@@ -745,21 +847,21 @@
 			<file>Aircraft/A350-family/Systems/Electrical/output.nas</file>
 			<file>Aircraft/A350-family/Systems/Electrical/electrical.nas</file>
 		</electrical>
+		<autopush>
+			<file>Aircraft/A350-family/Nasal/Autopush/autopush.nas</file>
+		</autopush>
+		<autopush_driver>
+			<file>Aircraft/A350-family/Nasal/Autopush/driver.nas</file>
+		</autopush_driver>
+		<dynarr>
+			<file>Aircraft/A350-family/Nasal/Autopush/dynarr.nas</file>
+		</dynarr>
+		<autopush_route>
+			<file>Aircraft/A350-family/Nasal/Autopush/route.nas</file>
+		</autopush_route>
 		<tyresmoke>
 			<file>Aircraft/A350-family/Nasal/tyresmoke.nas</file>
 		</tyresmoke>
-		<autopush>
-			<file>Nasal/Autopush/autopush.nas</file>
-		</autopush>
-		<autopush_driver>
-			<file>Nasal/Autopush/driver.nas</file>
-		</autopush_driver>
-		<dynarr>
-			<file>Nasal/Autopush/dynarr.nas</file>
-		</dynarr>
-		<autopush_route>
-			<file>Nasal/Autopush/route.nas</file>
-		</autopush_route>
 	</nasal>
 
 </PropertyList>

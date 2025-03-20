@@ -1,11 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PropertyList>
   <path>A350-900.ac</path>
-
-  <offsets>
-    <x-m>-32.8</x-m> <!-- -32.8-->
-    <z-m>0.7</z-m>
-  </offsets>
 
   <!-- Livery System : Updated IH-COL Sept 2015 -->
   <nasal>

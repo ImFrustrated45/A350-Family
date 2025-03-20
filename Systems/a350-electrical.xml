@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<!-- Airbus A350 Electrical -->
+<!-- Copyright (c) 2025 Kweku Adu (Captain Jake/AAL5665) -->
+
+<system name="A350: Electrical">
+
+    <property value="0">/systems/electrical/busbar/ac-tie</property>
+    <!-- Batteries -->
+	<property value="0">/systems/electrical/sources/bat-charger-powered</property>
+	<property value="0">/systems/electrical/sources/bat-1/amp</property>
+	<property value="99.9">/systems/electrical/sources/bat-1/percent</property>
+	<property value="0">/systems/electrical/sources/bat-2/amp</property>
+	<property value="99.9">/systems/electrical/sources/bat-2/percent</property>
+    <property value="0">/systems/electrical/sources/bat-1-emer/amp</property>
+	<property value="99.9">/systems/electrical/sources/bat-1-emer/percent</property>
+	<property value="0">/systems/electrical/sources/bat-2-emer/amp</property>
+	<property value="99.9">/systems/electrical/sources/bat-2-emer/percent</property>
+</system>

@@ -24,14 +24,14 @@ YAW MOI_________3950000______23089847_______24848934
     <ixy unit="SLUG*FT2">0</ixy>
     <ixz unit="SLUG*FT2">0</ixz>
     <iyz unit="SLUG*FT2">0</iyz>
-    <emptywt unit="LBS">229100</emptywt>
-    <location name="CG" unit="IN">
-      <x>0</x>
+    <emptywt unit="LBS">291010</emptywt>
+    <location name="CG" unit="M">
+      <x>-3.249</x>
       <y>0</y>
-      <z>0</z>
+      <z>0.493</z>
     </location>
 
-    <pointmass name="Crew">
+    <!--<pointmass name="Crew">
         <weight unit="LBS">400</weight>
         <location name="POINTMASS" unit="IN">
             <x>-1165.35</x>
@@ -116,5 +116,5 @@ YAW MOI_________3950000______23089847_______24848934
             <y>10.3658</y>
             <z>-1.3916</z>
         </location>
-    </pointmass>
+    </pointmass> -->
 </mass_balance>

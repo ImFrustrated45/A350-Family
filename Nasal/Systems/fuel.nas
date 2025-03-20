@@ -1,5 +1,5 @@
 # Airbus A350-900 Fuel System
-# Copyright (c) 2024 Kweku Adu (Captain Jake)
+# Copyright (c) 2024 Kweku Adu (Captain Jake/AAL5665)
 
 var FUEL = {
     Controls: {
@@ -20,7 +20,7 @@ var FUEL = {
         }
     },
     Failures: {
-        # TODO : Fuel Failures
+        # TODO : Fuel System Failures
     },
     init: func() {
         me.Controls.mainPumpL.setBoolValue(0);
