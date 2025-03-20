@@ -5,13 +5,6 @@
 		<description>Airbus A350-900 (RR - Trent XWB)</description>
 		<engine>Trent XWB</engine>
 		<flight-model>jsb</flight-model>
-		<flaps>
-			<setting>0.00</setting>
-			<setting>0.29</setting>
-			<setting>0.596</setting>
-			<setting>0.645</setting>
-			<setting>1</setting>
-		</flaps>
 		<airport>
 			<runways>
 				<start-offset-m>30</start-offset-m>
@@ -21,6 +14,13 @@
 			<path>/sim/model/autopush/route/show</path>
 			<path>/sim/model/autopush/route/show-wingtip</path>
 		</aircraft-data>
+		<flaps>
+			<setting>0.00</setting>
+			<setting>0.29</setting>
+			<setting>0.596</setting>
+			<setting>0.645</setting>
+			<setting>1</setting>
+		</flaps>
 		<model>
 			<path>Aircraft/A350-family/Models/A350-900.xml</path>
 		</model>
@@ -39,34 +39,40 @@
 	
 	<payload>
 		<weight n="0">
-			<name>Crew</name>
+			<name>Foward Cabin</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
-			<min-lb type="double">120</min-lb>
-			<max-lb type="double">600</max-lb>
+			<min-lb type="double">0</min-lb>
+			<max-lb type="double">13862</max-lb>
 		</weight>
 		<weight n="1">
-			<name>PAX</name>
+			<name>Mid Cabin</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
 			<min-lb type="double">0</min-lb>
-			<max-lb type="double">56520</max-lb>
+			<max-lb type="double">27138</max-lb>
+		</weight>
+		<weight n="1">
+			<name>Aft Cabin</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]"/>
+			<min-lb type="double">0</min-lb>
+			<max-lb type="double">29000</max-lb>
 		</weight>
 		<weight n="2">
 			<name>Fwd Cargo</name>
-			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]"/>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[3]"/>
 			<min-lb type="double">0</min-lb>
-			<max-lb type="double">13000</max-lb>
+			<max-lb type="double">25000</max-lb>
 		</weight>
 		<weight n="3">
 			<name>Aft Cargo</name>
-			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[3]"/>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[4]"/>
 			<min-lb type="double">0</min-lb>
-			<max-lb type="double">18000</max-lb>
+			<max-lb type="double">30000</max-lb>
 		</weight>
 		<weight n="4">
 			<name>Rear Bulk Cargo</name>
-			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[4]"/>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[5]"/>
 			<min-lb type="double">0</min-lb>
-			<max-lb type="double">3000</max-lb>
+			<max-lb type="double">7000</max-lb>
 		</weight>
 	</payload>
 
